@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 # Initialization
 ## c() function
 ### Numeric vectors
@@ -81,4 +79,20 @@ Let's choose two colors out of three.
 ```r
 colors <- c("red", "green", "blue")
 sample(colors, 2)                   #  "red"  "blue"
+```
+
+# Control
+
+## Replication
+
+Assume that the urn contains $7$ balls: $x$ red and $y$ black.In each trial of the experiment we're allowed to take two balls from the urn, and we can have as many trials as we need. The goal is to derive the probability of drawing one red followed by one black ball.
+```r
+x <- sample(seq(1,7), 1)                                                    # the number of red balls
+y <- 7 - x                                                                  # the number of black balls
+balls <- c(rep("red", x), rep("black", y))                                  # defining the urn
+test <- replicate(10000, sample(balls, 2))                                  # replicating 10000 trials
+estimation <- sum((test[1,] == "red") & (test[2,] == "black")) / 10000
+print(estimation)                                                           # 0.2396
+true_value <- (x/7)*(y/6)                                                   # Naive probability
+print(true_value)                                                           # 0.2380952
 ```
