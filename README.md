@@ -1,3 +1,5 @@
+[[_TOC_]]
+
 # Initialization
 ## c() function
 ### Numeric vectors
@@ -59,4 +61,24 @@ Repetition.
 ```r
 bottles <- rep("bottle", 99)    # 99 bottles of beer
 str(bottles)                    # chr [1:99] "bottle" "bottle" "bottle" "bottle" "bottle" "bottle" "bottle" ...
+```
+
+# Sampling
+## Sampling from vectors
+### Sampling with replacement
+
+In this example we throw two fair $6$-sided dice.
+
+```r
+die <- seq(1, 6)
+sample(die, 2, replace=TRUE)
+```
+
+### Sampling without replacement
+
+Let's choose two colors out of three.
+
+```r
+colors <- c("red", "green", "blue")
+sample(colors, 2)                   #  "red"  "blue"
 ```
