@@ -113,6 +113,7 @@ sample(colors, 2)                   #  "red"  "blue"
 
 ### Discrete distribution example
 
+![binomial](https://github.com/esamut/R-cheat-sheet/assets/144279560/90290aee-14cd-4311-b0ed-534c4cde6ccc)
 ```r
 k <- seq(0, 2)
 binom_pmf <- dbinom(k, 2, 0.5)  # PMF evaluated in points defined in vector k
@@ -129,12 +130,14 @@ print(sum(samples == 2) / 1000)     # 0.225
 
 ### Continuous distribution example
 
+![normal](https://github.com/esamut/R-cheat-sheet/assets/144279560/d583e8f3-1911-4ff9-8ee1-b216572c0913)
 ```r
 x <- seq(-3, 3, 0.01)
 normal_pdf <- dnorm(x, 0, 1)
 plot(x, normal_pdf, type='l')
 ```
 
+![binomial](https://github.com/esamut/R-cheat-sheet/assets/144279560/90290aee-14cd-4311-b0ed-534c4cde6ccc)
 ```r
 hist(rnorm(1000, 0, 1))
 ```
